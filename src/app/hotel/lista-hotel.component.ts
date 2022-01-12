@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hotel } from '../models/hotel';
-import { HotelService } from '../service/hotel.service';
+import { ServiceService } from '../service/service.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -13,7 +13,7 @@ export class ListaHotelComponent implements OnInit {
   hoteles: Hotel[] = [];
 
   constructor(
-    private hotelService: HotelService, 
+    private serviceService: ServiceService, 
     private toastr: ToastrService
     ) { }
 
@@ -22,7 +22,7 @@ export class ListaHotelComponent implements OnInit {
   }
   
   cargarHoteles(): void {
-    this.hotelService.lista().subscribe(
+    this.serviceService.lista().subscribe(
       data=>{
         this.hoteles = data;
       },

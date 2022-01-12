@@ -8,7 +8,7 @@ import { Hotel} from '../models/hotel';
   providedIn: 'root'
 })
 
-export class HotelService {
+export class ServiceService {
 
   hotelURL = 'http://localhost:8080/hotel/';
 
@@ -19,16 +19,17 @@ export class HotelService {
     return this.httpClient.get<Hotel[]>(this.hotelURL + 'lista');
   }
 
+  
+  public crear(hotel: Hotel): Observable<any> {
+    return this.httpClient.post<any>(this.hotelURL + 'crear', hotel);
+  }
+
   public detalle(id: number): Observable<Hotel> {
     return this.httpClient.get<Hotel>(this.hotelURL + `detalle/${id}`);
   }
 
   public detalleNombre(nombre: string): Observable<Hotel> {
     return this.httpClient.get<Hotel>(this.hotelURL + `detalleNombre/${nombre}`);
-  }
-
-  public save(hotel: Hotel): Observable<any> {
-    return this.httpClient.post<any>(this.hotelURL + 'crear', hotel);
   }
 
   public actualizar(id: number, hotel: Hotel): Observable<any> {
