@@ -36,7 +36,7 @@ export class ServiceService {
     return this.httpClient.put<any>(this.hotelURL + `actualizar/${id}`, hotel);
   }
 
-  public delete(id: number): Observable<any> {
-    return this.httpClient.delete<any>(this.hotelURL + `delete/${id}`);
+  public delete(hotel: Hotel): Observable<any> {
+    return this.httpClient.delete<any>(this.hotelURL + `delete/${hotel.id}`);
   }
 }

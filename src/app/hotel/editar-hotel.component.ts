@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Hotel } from '../models/hotel';
+import { ServiceService } from '../service/service.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-editar-hotel',
@@ -7,9 +12,46 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditarHotelComponent implements OnInit {
 
-  constructor() { }
+  hotel: Hotel = {} as Hotel;
+
+  constructor(
+    private hotelService: ServiceService,
+    private activatedRoute: ActivatedRoute,
+    private toastr: ToastrService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+    const id = this.activatedRoute.snapshot.params['id'];
+    this.hotelService.detalle(id).subscribe(
+      data => {
+        this.hotel = data;
+      },
+      err => {
+        this.toastr.error(err.error.mensaje, 'Fail', {
+          timeOut: 3000,  positionClass: 'toast-top-center',
+        });
+        this.router.navigate(['/']);
+      }
+    );
+  }
+
+  onUpdate(): void {
+    const id = this.activatedRoute.snapshot.params['id'];
+    this.hotelService.actualizar(id, this.hotel).subscribe(
+      data => {
+        this.toastr.success('Hotel Actualizado', 'OK', {
+          timeOut: 3000, positionClass: 'toast-top-center'
+        });
+        this.router.navigate(['/']);
+      },
+      err => {
+        this.toastr.error(err.error.mensaje, 'Fail', {
+          timeOut: 3000,  positionClass: 'toast-top-center',
+        });
+        this.router.navigate(['/']);
+      }
+    );
   }
 
 }

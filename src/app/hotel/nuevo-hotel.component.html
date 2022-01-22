@@ -1,1 +1,47 @@
-<div class="container"></div>
+<app-header></app-header>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-4 mx-auto">
+            <h1 class="text-center">Registro de Hotel</h1>
+        <form (ngSubmit)="crear()" novalidate #f="ngForm">
+            <div class="form-group mt-3">     
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id= "nombre" name="nombre"
+                    [(ngModel)]="nombre" required>
+            </div>
+            <div class="form-group">            
+                    <label for="direccion">Direccion</label>
+                    <input type="text" class="form-control" id= "direccion" name="direccion"
+                    [(ngModel)]="direccion" required>           
+            </div>
+            <div class="form-group">           
+                    <label for="ciudad">Ciudad</label>
+                    <input type="text" class="form-control" id= "ciudad" name="ciudad"
+                    [(ngModel)]="ciudad" required>           
+            </div>
+            <div class="form-group">            
+                    <label for="telefono">Telefono</label>
+                    <input type="number" class="form-control" id= "telefono" name="telefono"
+                    [(ngModel)]="telefono" required>           
+            </div>
+            <div class="form-group">               
+                    <label for="numeroDePlazas">Numero de plazas</label>
+                    <input type="number" class="form-control" id= "numeroDePlazas" name="numeroDePlazas"
+                    [(ngModel)]="numeroDePlazas" required>            
+            </div>
+            <div class="form-group">             
+                    <label for="precioPensionCompleta">Precio de pension completa</label>
+                    <input type="number" class="form-control" id= "precioPensionCompleta" name="precioPensionCompleta"
+                    [(ngModel)]="precioPensionCompleta" required>           
+            </div>
+            <div class="form-group">               
+                    <label for="precioMediaPension">Precio de media pension</label>
+                    <input type="number" class="form-control" id= "precioMediaPension" name="precioMediaPension"
+                    [(ngModel)]="precioMediaPension" required>            
+            </div>
+            <div class="text-center mt-3">
+                <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Crear</button>
+            </div>            
+        </form>
+    </div>
+</div>

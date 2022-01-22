@@ -31,22 +31,22 @@ export class ListaHotelComponent implements OnInit {
       }
     );
   }
-  borrar(id: number) {
+  borrar(hotel: Hotel) {
 
-    alert('borrar el'+ id)
-    // this.hotelService.delete(id).subscribe(
-    //   data => {
-    //     this.toastr.success('Hotel Eliminado', 'OK', {
-    //       timeOut: 3000, positionClass: 'toast-top-center'
-    //     });
-    //     this.cargarHoteles();
-    //   },
-    //   err => {
-    //     this.toastr.error(err.error.mensaje, 'Fail', {
-    //       timeOut: 3000,  positionClass: 'toast-top-center',
-    //     });
-    //   }
-    // );
+    // alert('borrar el'+ id)
+    this.serviceService.delete(hotel).subscribe(
+      data => {
+        this.toastr.success('Hotel Eliminado', 'OK', {
+          timeOut: 3000, positionClass: 'toast-top-center'
+        });
+        this.cargarHoteles();
+      },
+      err => {
+        this.toastr.error(err.error.mensaje, 'Fail', {
+          timeOut: 3000,  positionClass: 'toast-top-center',
+        });
+      }
+    );
   }
   
 

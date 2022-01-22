@@ -28,18 +28,20 @@ export class NuevoHotelComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  crear(): void{
+  crear(): void {
     const hotel = new Hotel(this.nombre,this.direccion,this.ciudad,this.telefono,this.numeroDePlazas,this.precioPensionCompleta,this.precioMediaPension)
     this.serviceService.crear(hotel).subscribe(
       data =>{
         this.toastr.success('Hotel creado','ok',{
-          timeOut : 3000
+          timeOut : 3000,
+          positionClass: 'toast-top-center'
         });
         this.router.navigate(['/'])
       },
       err =>{   
         this.toastr.error(err.error.mensaje,'Fail',{
-          timeOut : 3000
+          timeOut : 3000,
+          positionClass: 'toast-top-center'          
         });
         this.router.navigate(['/'])     
       }
