@@ -8,7 +8,7 @@ import { Hotel} from '../models/hotel';
   providedIn: 'root'
 })
 
-export class ServiceService {
+export class HotelService {
 
   hotelURL = 'http://localhost:8080/hotel/';
 

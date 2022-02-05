@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hotel } from '../models/hotel';
-import { ServiceService } from '../service/service.service';
+import { HotelService } from '../service/hotel.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
@@ -15,7 +15,7 @@ export class EditarHotelComponent implements OnInit {
   hotel: Hotel = {} as Hotel;
 
   constructor(
-    private hotelService: ServiceService,
+    private hotelService: HotelService,
     private activatedRoute: ActivatedRoute,
     private toastr: ToastrService,
     private router: Router

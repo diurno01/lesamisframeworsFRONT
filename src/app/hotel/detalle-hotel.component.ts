@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Hotel } from '../models/hotel';
-import { ServiceService } from '../service/service.service';
+import { HotelService } from '../service/hotel.service';
 
 @Component({
   selector: 'app-detalle-hotel',
@@ -15,7 +15,7 @@ export class DetalleHotelComponent implements OnInit {
   hotel: Hotel = <Hotel>{};
 
   constructor(
-    private hotelService: ServiceService,
+    private hotelService: HotelService,
     private activatedRoute: ActivatedRoute,
     private toastr: ToastrService,
     private router: Router

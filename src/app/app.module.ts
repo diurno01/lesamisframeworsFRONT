@@ -8,7 +8,7 @@ import { DetalleHotelComponent } from './hotel/detalle-hotel.component';
 import { NuevoHotelComponent } from './hotel/nuevo-hotel.component';
 import { EditarHotelComponent } from './hotel/editar-hotel.component';
 
-import {ServiceService} from './service/service.service'
+import {HotelService} from './service/hotel.service'
 
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
@@ -19,6 +19,7 @@ import {FormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HeaderComponent } from './utilities/header.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HeaderComponent } from './utilities/header.component';
     DetalleHotelComponent,
     NuevoHotelComponent,
     EditarHotelComponent,
-    HeaderComponent
+    HeaderComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,7 @@ import { HeaderComponent } from './utilities/header.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [ServiceService],
+  providers: [HotelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

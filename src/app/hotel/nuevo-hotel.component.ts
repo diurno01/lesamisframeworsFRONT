@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { Hotel } from '../models/hotel';
-import { ServiceService } from '../service/service.service';
+import { HotelService } from '../service/hotel.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -20,7 +20,7 @@ export class NuevoHotelComponent implements OnInit {
   precioMediaPension: number = 0;
 
   constructor(
-     private serviceService: ServiceService,
+     private hotelService : HotelService,
      private toastr: ToastrService,
      private router : Router
     ) { }
@@ -30,7 +30,7 @@ export class NuevoHotelComponent implements OnInit {
 
   crear(): void {
     const hotel = new Hotel(this.nombre,this.direccion,this.ciudad,this.telefono,this.numeroDePlazas,this.precioPensionCompleta,this.precioMediaPension)
-    this.serviceService.crear(hotel).subscribe(
+    this.hotelService.crear(hotel).subscribe(
       data =>{
         this.toastr.success('Hotel creado','ok',{
           timeOut : 3000,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hotel } from '../models/hotel';
-import { ServiceService } from '../service/service.service';
+import { HotelService } from '../service/hotel.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -13,7 +13,7 @@ export class ListaHotelComponent implements OnInit {
   hoteles: Hotel[] = [];
 
   constructor(
-    private serviceService: ServiceService, 
+    private hotelService: HotelService, 
     private toastr: ToastrService
     ) { }
 
@@ -22,7 +22,7 @@ export class ListaHotelComponent implements OnInit {
   }
   
   cargarHoteles(): void {
-    this.serviceService.lista().subscribe(
+    this.hotelService.lista().subscribe(
       data=>{
         this.hoteles = data;
       },
@@ -34,7 +34,7 @@ export class ListaHotelComponent implements OnInit {
   borrar(hotel: Hotel) {
 
     // alert('borrar el'+ id)
-    this.serviceService.delete(hotel).subscribe(
+    this.hotelService.delete(hotel).subscribe(
       data => {
         this.toastr.success('Hotel Eliminado', 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'
