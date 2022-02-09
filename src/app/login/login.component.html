@@ -1,1 +1,22 @@
-<app-lista-hotel></app-lista-hotel>
+<!-- <app-lista-hotel></app-lista-hotel> -->
+<app-header></app-header>
+
+
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-4 mx-auto">
+        <div class="card" style="width: 18rem;">
+            <div class="card-header text-center">
+          <h5 class="card-title">Login</h5>
+            <form (ngSubmit)="loginUser()">
+              <div class="mb-2">
+                 <input type="text" [(ngModel)]="login.usuario" id="usuario" class="fadeIn second"  name="usuario" placeholder="usuario">
+              </div>  
+              <div class="mb-2">
+                <input type="password" [(ngModel)]="login.password" id="password" class="fadeIn third"  name="password" placeholder="password">
+              </div>              
+              <input type="submit" class="btn btn-primary" value="Login">
+            </form>
+        </div>
+  </div>
+</div> 

@@ -18,7 +18,6 @@ export class HotelService {
    public lista(): Observable<Hotel[]> {
     return this.httpClient.get<Hotel[]>(this.hotelURL + 'lista');
   }
-
   
   public crear(hotel: Hotel): Observable<any> {
     return this.httpClient.post<any>(this.hotelURL + 'crear', hotel);
