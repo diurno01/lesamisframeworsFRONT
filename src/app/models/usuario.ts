@@ -10,9 +10,9 @@ export class Usuario {
     direccion: string;
     telefono: string;
     email: string;
-    tipo: tipo;
+    tipo: string;
 
-    constructor(usuario: string, password: string,dni: number, nombre: string, apellido: string, direccion: string, telefono: string, email: string, tipo: tipo) {
+    constructor(usuario: string, password: string,dni: number, nombre: string, apellido: string, direccion: string, telefono: string, email: string, tipo: string) {
         this.usuario = usuario;
         this.password = password;
         this.dni = dni;
@@ -27,8 +27,3 @@ export class Usuario {
 }
 
 
-enum tipo {
-    ADMIN,
-    VENDEDOR,
-    CLIENTE
-}

@@ -28,6 +28,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HeaderComponent } from './utilities/header.component';
 import { LoginService } from './service/login.service';
+import { MenuAdminComponent } from './menus/menu-admin.component';
+import { MenuVendedorComponent } from './menus/menu-vendedor.component';
+import { MenuClienteComponent } from './menus/menu-cliente.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import { LoginService } from './service/login.service';
     NuevoHotelComponent,
     EditarHotelComponent,
     HeaderComponent,
-    LoginComponent
+    LoginComponent,
+    MenuAdminComponent,
+    MenuVendedorComponent,
+    MenuClienteComponent
   ],
   imports: [
     BrowserModule,
