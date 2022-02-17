@@ -7,10 +7,13 @@
     <ul class="navbar-nav ml-auto">
      
       <li class="nav-item">
-        <a class="nav-link" routerLink="hotel/"><i class="far fa-list-alt"></i> Lista</a>
+        <a class="nav-link" routerLink="/hotel"><i class="far fa-list-alt"></i> Lista</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link"  routerLink="hotel/nuevo"><i class="fas fa-plus-circle"></i> Nuevo Hotel</a>
+        <a class="nav-link"  routerLink="/hotel/nuevo"><i class="fas fa-plus-circle"></i> Nuevo Hotel</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  routerLink="/menu-admin"><i class="fa-solid fa-backward"></i> Volver</a>
       </li>
       
     </ul>
@@ -46,8 +49,8 @@
         <td>{{hotel.numeroDePlazas}}</td>
         <td>{{hotel.precioPensionCompleta}}</td>
         <td>{{hotel.precioMediaPension}}</td>      
-        <td><button class="btn btn-outline-primary" routerLink="hotel/detalle/{{hotel.id}}"><i class="far fa-eye"></i>Ver</button></td>
-        <td><button class="btn btn-outline-warning" routerLink="hotel/editar/{{hotel.id}}"><i class="far fa-edit"></i>Editar</button></td>        
+        <td><button class="btn btn-outline-primary" routerLink="/hotel/detalle/{{hotel.id}}"><i class="far fa-eye"></i>Ver</button></td>
+        <td><button class="btn btn-outline-warning" routerLink="/hotel/editar/{{hotel.id}}"><i class="far fa-edit"></i>Editar</button></td>        
         <td><button class="btn btn-outline-danger" (click)="borrar(hotel)"><i class="far fa-trash-alt"></i>Eliminar</button></td>
       </tr>
     </tbody>

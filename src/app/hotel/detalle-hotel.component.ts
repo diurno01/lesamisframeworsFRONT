@@ -37,7 +37,7 @@ export class DetalleHotelComponent implements OnInit {
   }
 
     volver(){
-    this.router.navigate(['/']);
+    this.router.navigate(['/hotel']);
   }
 }
  
