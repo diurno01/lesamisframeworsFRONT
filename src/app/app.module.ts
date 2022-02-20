@@ -36,6 +36,11 @@ import { NuevoUsuarioComponent } from './usuario/nuevo-usuario.component';
 import { EditarUsuarioComponent } from './usuario/editar-usuario.component';
 import { ListaUsuarioComponent } from './usuario/lista-usuario.component';
 import { UsuarioService } from './service/usuario.service';
+import { DetalleVueloComponent } from './vuelo/detalle-vuelo.component';
+import { ListaVueloComponent } from './vuelo/lista-vuelo.component';
+import { NuevoVueloComponent } from './vuelo/nuevo-vuelo.component';
+import { EditarVueloComponent } from './vuelo/editar-vuelo.component';
+import { VueloService } from './service/vuelo.service';
 
 @NgModule({
   declarations: [
@@ -53,6 +58,10 @@ import { UsuarioService } from './service/usuario.service';
     NuevoUsuarioComponent,
     EditarUsuarioComponent,
     ListaUsuarioComponent,
+    DetalleVueloComponent,
+    ListaVueloComponent,
+    NuevoVueloComponent,
+    EditarVueloComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,7 +71,7 @@ import { UsuarioService } from './service/usuario.service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [HotelService,LoginService,UsuarioService],
+  providers: [HotelService,LoginService,UsuarioService,VueloService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

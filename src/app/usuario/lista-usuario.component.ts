@@ -11,6 +11,8 @@ import { ToastrService } from 'ngx-toastr';
 export class ListaUsuarioComponent implements OnInit {
 
   usuarios: Usuario[]=[];
+  botonEliminar: string={} as string;
+  // show: boolean={} as boolean;
 
   constructor(
     private usuarioService: UsuarioService, 
@@ -18,26 +20,26 @@ export class ListaUsuarioComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.cargarUsuarios;
+    this.cargarUsuarios();
   }
 
   cargarUsuarios(): void {
     this.usuarioService.lista().subscribe(
       data=>{
-        this.usuarios = data;
+        this.usuarios = data;       
+        console.log(this.usuarios)
       },
       err=>{
         console.log(err);
+        console.log("error fallo lista")
       }      
     );
   }
 
   borrar(usuario: Usuario) {
-
-    // alert('borrar el'+ id)
     this.usuarioService.delete(usuario).subscribe(
       data => {
-        this.toastr.success('Hotel Eliminado', 'OK', {
+        this.toastr.success('Usuario Eliminado', 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'
         });
         this.cargarUsuarios();

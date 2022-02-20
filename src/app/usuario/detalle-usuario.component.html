@@ -1,1 +1,30 @@
-<p>detalle-usuario works!</p>
+<app-header></app-header>
+
+
+<div class="container">
+    <div class="row mt-5" *ngIf="usuario">
+      <div class="col-md-4 mx-auto">
+          <div class="card" style="width: 18rem;">
+              <div class="card-header text-center">
+              <b>Detalle</b> 
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><b>ID: </b>{{usuario.id}}</li>
+                <li class="list-group-item"><b>NOMBRE: </b>{{usuario.nombre}}</li>
+                <li class="list-group-item"><b>APELLIDO: </b>{{usuario.apellido}}</li>
+                <li class="list-group-item"><b>USUARIO: </b>{{usuario.usuario}}</li>
+                <li class="list-group-item"><b>PASSWORD: </b>{{usuario.password}}</li>
+                <li class="list-group-item"><b>DNI: </b>{{usuario.dni}}</li>
+                <li class="list-group-item"><b>DIRECCIÓN: </b>{{usuario.direccion}}</li>
+                <li class="list-group-item"><b>TELEFONO: </b>{{usuario.telefono}}</li>
+                <li class="list-group-item"><b>SUCURSAL: </b>{{usuario.sucursal}}</li>
+                <li class="list-group-item"><b>TIPO: </b>{{usuario.tipo}}</li>
+              </ul>
+              <div class="card-footer">
+                  <button class="btn btn-outline-primary btn-block" (click)="volver()"><i class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+              </div>
+            </div>
+            
+      </div>
+  </div>
+  </div>

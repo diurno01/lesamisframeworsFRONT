@@ -10,11 +10,15 @@ export class UsuarioService {
 
   usuarioURL = 'http://localhost:8080/usuario/';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {    
+   }
+
   public lista(): Observable<Usuario[]> {
     return this.httpClient.get<Usuario[]>(this.usuarioURL + 'lista');
   }
   
+//falta hacer el llamado desde la base de datos para las sucursales
+
 public crear(usuario: Usuario): Observable<any> {
   return this.httpClient.post<any>(this.usuarioURL + 'crear', usuario);
 }

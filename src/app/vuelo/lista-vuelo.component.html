@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Les Amis</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+       
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/vuelo"><i class="far fa-list-alt"></i> Lista</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  routerLink="/vuelo/nuevo"><i class="fas fa-plus-circle"></i> Nuevo Vuelo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  routerLink="/menu-admin"><i class="fa-solid fa-backward"></i> Volver</a>
+        </li>
+        
+      </ul>
+    </div>
+  </nav>
+
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">NumVuelo</th>
+        <th scope="col">Fecha y Hora</th>     
+        <th scope="col">Origen</th>   
+        <th scope="col">Destino</th>   
+        <th scope="col">PlazasPrimera</th>   
+        <th scope="col">PlazasTurista</th>   
+        <th scope="col">PrecioPrimera</th>   
+        <th scope="col">PrecioTurista</th>   
+        <th scope="col">Ver</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Borrar</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vuelo of vuelos">
+        <td>{{vuelo.id}}</td>
+        <td>{{vuelo.numeroDeVuelo}}</td>
+        <td>{{vuelo.fechaYhora}}</td>
+        <td>{{vuelo.origen}}</td>
+        <td>{{vuelo.destino}}</td>
+        <td>{{vuelo.plazasPrimeraClase}}</td>
+        <td>{{vuelo.plazasClaseTurista}}</td>
+        <td>{{vuelo.precioPrimeraClase}}</td>    
+        <td>{{vuelo.precioClaseturista}}</td>   
+        <td><button class="btn btn-outline-primary" routerLink="/hotel/detalle/{{vuelo.id}}"><i class="far fa-eye"></i>Ver</button></td>
+        <td><button class="btn btn-outline-warning" routerLink="/hotel/editar/{{vuelo.id}}"><i class="far fa-edit"></i>Editar</button></td>        
+        <td><button class="btn btn-outline-danger" (click)="borrar(vuelo)"><i class="far fa-trash-alt"></i>Eliminar</button></td>
+      </tr>
+    </tbody>
+  </table>
