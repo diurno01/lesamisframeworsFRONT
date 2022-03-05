@@ -41,6 +41,7 @@ import { ListaVueloComponent } from './vuelo/lista-vuelo.component';
 import { NuevoVueloComponent } from './vuelo/nuevo-vuelo.component';
 import { EditarVueloComponent } from './vuelo/editar-vuelo.component';
 import { VueloService } from './service/vuelo.service';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,13 @@ import { VueloService } from './service/vuelo.service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [HotelService,LoginService,UsuarioService,VueloService],
+  providers: [
+    HotelService,
+    LoginService,
+    UsuarioService,
+    VueloService,
+    DatePipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

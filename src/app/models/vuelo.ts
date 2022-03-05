@@ -2,7 +2,7 @@ export class Vuelo {
     id?: number;
 
     numeroDeVuelo: number;
-    fechaYhora: Date;
+    fechaYHora: Date;
     origen: string;
     destino: string;
     plazasPrimeraClase: number;
@@ -10,9 +10,9 @@ export class Vuelo {
     precioPrimeraClase: number;
     precioClaseturista: number;
 
-    constructor(numeroDeVuelo: number, fechaYhora: Date, origen: string, destino: string, plazasPrimeraClase: number, plazasClaseTurista: number, precioPrimeraClase: number, precioClaseturista: number){
+    constructor(numeroDeVuelo: number, fechaYHora: Date, origen: string, destino: string, plazasPrimeraClase: number, plazasClaseTurista: number, precioPrimeraClase: number, precioClaseturista: number){
         this.numeroDeVuelo = numeroDeVuelo;
-        this.fechaYhora = fechaYhora;
+        this.fechaYHora = fechaYHora;
         this.origen = origen;
         this.destino = destino;
         this.plazasPrimeraClase = plazasPrimeraClase;

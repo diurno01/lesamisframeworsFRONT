@@ -1,1 +1,54 @@
-<p>nuevo-vuelo works!</p>
+<app-header></app-header>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-4 mx-auto">
+            <h1 class="text-center">Registro de vuelo</h1>
+        <form (ngSubmit)="crear()" novalidate #f="ngForm">
+            <div class="form-group">           
+                <label for="numeroDeVuelo">Numero De Vuelo</label>
+                <input type="number" class="form-control" id= "numeroDeVuelo" name="numeroDeVuelo"
+                [(ngModel)]="numeroDeVuelo" required>           
+            </div>
+            <div class="form-group mt-3">     
+                    <label for="fechaYHora">Fecha</label>
+                    <input type="datetime-local" class="form-control" id= "fechaYHora" name="fechaYHora"
+                    [(ngModel)]="fechaYHora" required>
+            </div>                      
+            <div class="form-group">            
+                    <label for="origen">Origen</label>
+                    <input type="text" class="form-control" id= "origen" name="origen" 
+                    [(ngModel)]="origen" required>           
+            </div>
+            <div class="form-group">               
+                    <label for="destino">Destino</label>
+                    <input type="text" class="form-control" id= "destino" name="destino"
+                    [(ngModel)]="destino" required>            
+            </div>            
+            <div class="form-group">               
+                    <label for="plazasPrimeraClase">Plazas Primera Clase</label>
+                    <input type="number" class="form-control" id= "plazasPrimeraClase" name="plazasPrimeraClase"
+                    [(ngModel)]="plazasPrimeraClase" required>            
+            </div>
+            <div class="form-group">               
+                <label for="plazasClaseTurista">Plazas Clase Turista</label>
+                <input type="number" class="form-control" id= "plazasClaseTurista" name="plazasClaseTurista"
+                [(ngModel)]="plazasClaseTurista" required>            
+            </div>
+            <div class="form-group">               
+                <label for="precioPrimeraClase">Precio Primera Clase</label>
+                <input type="number" class="form-control" id= "precioPrimeraClase" name="precioPrimeraClase"
+                [(ngModel)]="precioPrimeraClase" required>            
+            </div>
+            <div class="form-group">               
+                <label for="precioClaseturista">Precio Clase Turista</label>
+                <input type="number" class="form-control" id= "precioClaseturista" name="precioClaseturista"
+                [(ngModel)]="precioClaseturista" required>            
+            </div>
+            <div class="text-center mt-3">
+                <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Crear</button>
+            </div>            
+        </form>
+    </div>
+</div>
+</div>
+

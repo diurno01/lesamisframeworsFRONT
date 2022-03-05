@@ -35,14 +35,14 @@
         <th scope="col">Ver</th>
         <th scope="col">Editar</th>
         <th scope="col">Borrar</th>
-
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let vuelo of vuelos">
         <td>{{vuelo.id}}</td>
         <td>{{vuelo.numeroDeVuelo}}</td>
-        <td>{{vuelo.fechaYhora}}</td>
+        <td>{{parseDate(vuelo.fechaYHora)}}</td>       
+        <!-- | date: 'medium' -->
         <td>{{vuelo.origen}}</td>
         <td>{{vuelo.destino}}</td>
         <td>{{vuelo.plazasPrimeraClase}}</td>
