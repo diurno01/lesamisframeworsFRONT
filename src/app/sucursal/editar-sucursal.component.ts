@@ -1,55 +1,57 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Vuelo } from '../models/vuelo';
-import { VueloService } from '../service/vuelo.service';
+import { Sucursal } from '../models/sucursal';
+import { SucursalService } from '../service/sucursal.service';
 
 @Component({
-  selector: 'app-editar-vuelo',
-  templateUrl: './editar-vuelo.component.html',
-  styleUrls: ['./editar-vuelo.component.css']
+  selector: 'app-editar-sucursal',
+  templateUrl: './editar-sucursal.component.html',
+  styleUrls: ['./editar-sucursal.component.css']
 })
-export class EditarVueloComponent implements OnInit {
+export class EditarSucursalComponent implements OnInit {
 
-  vuelo: Vuelo= {} as Vuelo;
+  sucursal: Sucursal= {} as Sucursal;
 
   constructor(
-    private vueloService: VueloService,
+    private sucursalService: SucursalService,
     private activatedRoute: ActivatedRoute,
     private toastr: ToastrService,
     private router: Router
   ) { }
 
+ 
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.params['id'];
-    this.vueloService.detalle(id).subscribe(
+    this.sucursalService.detalle(id).subscribe(
       data => {
-        this.vuelo = data;
+        this.sucursal = data;
       },
       err => {
         this.toastr.error(err.error.mensaje, 'Fail', {
           timeOut: 3000,  positionClass: 'toast-top-center',
         });
-        this.router.navigate(['/vuelo']);
+        this.router.navigate(['/sucursal']);
       }
     );
   }
 
   onUpdate(): void {
     const id = this.activatedRoute.snapshot.params['id'];
-    this.vueloService.actualizar(id, this.vuelo).subscribe(
+    this.sucursalService.actualizar(id, this.sucursal).subscribe(
       data => {
-        this.toastr.success('Vuelo Actualizado', 'OK', {
+        this.toastr.success('Sucursal Actualizado', 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'
         });
-        this.router.navigate(['/vuelo']);
+        this.router.navigate(['/sucursal']);
       },
       err => {
         this.toastr.error(err.error.mensaje, 'Fail', {
           timeOut: 3000,  positionClass: 'toast-top-center',
         });
-        this.router.navigate(['/vuelo/editar']);
+        this.router.navigate(['/sucursal']);
       }
     );
   }
+
 }

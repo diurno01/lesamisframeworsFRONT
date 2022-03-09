@@ -21,6 +21,10 @@ import { ListaVueloComponent } from './vuelo/lista-vuelo.component';
 import { DetalleVueloComponent } from './vuelo/detalle-vuelo.component';
 import { NuevoVueloComponent } from './vuelo/nuevo-vuelo.component';
 import { EditarVueloComponent } from './vuelo/editar-vuelo.component';
+//sucursal routes
+import { ListaSucursalComponent } from './sucursal/lista-sucursal.component';
+import { NuevoSucursalComponent } from './sucursal/nuevo-sucursal.component';
+import { EditarSucursalComponent } from './sucursal/editar-sucursal.component';
 
 
 const routes: Routes = [
@@ -40,6 +44,9 @@ const routes: Routes = [
   {path: 'hotel/detalle/:id', component:DetalleHotelComponent},
   {path: 'hotel/nuevo',component:NuevoHotelComponent},
   {path: 'hotel/editar/:id', component:EditarHotelComponent},
+  {path: 'sucursal', component: ListaSucursalComponent},
+  {path: 'sucursal/nuevo',component: NuevoSucursalComponent},
+  {path: 'sucursal/editar/:id', component: EditarSucursalComponent},
   {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 

@@ -32,7 +32,7 @@
         <th scope="col">PlazasTurista</th>   
         <th scope="col">PrecioPrimera</th>   
         <th scope="col">PrecioTurista</th>   
-        <th scope="col">Ver</th>
+        <!-- <th scope="col">Ver</th> -->
         <th scope="col">Editar</th>
         <th scope="col">Borrar</th>
       </tr>
@@ -49,8 +49,8 @@
         <td>{{vuelo.plazasClaseTurista}}</td>
         <td>{{vuelo.precioPrimeraClase}}</td>    
         <td>{{vuelo.precioClaseturista}}</td>   
-        <td><button class="btn btn-outline-primary" routerLink="/hotel/detalle/{{vuelo.id}}"><i class="far fa-eye"></i>Ver</button></td>
-        <td><button class="btn btn-outline-warning" routerLink="/hotel/editar/{{vuelo.id}}"><i class="far fa-edit"></i>Editar</button></td>        
+        <!-- <td><button class="btn btn-outline-primary" routerLink="/vuelo/detalle/{{vuelo.id}}"><i class="far fa-eye"></i>Ver</button></td> -->
+        <td><button class="btn btn-outline-warning" routerLink="/vuelo/editar/{{vuelo.id}}"><i class="far fa-edit"></i>Editar</button></td>        
         <td><button class="btn btn-outline-danger" (click)="borrar(vuelo)"><i class="far fa-trash-alt"></i>Eliminar</button></td>
       </tr>
     </tbody>

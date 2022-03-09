@@ -42,6 +42,10 @@ import { NuevoVueloComponent } from './vuelo/nuevo-vuelo.component';
 import { EditarVueloComponent } from './vuelo/editar-vuelo.component';
 import { VueloService } from './service/vuelo.service';
 import { DatePipe } from '@angular/common';
+import { ListaSucursalComponent } from './sucursal/lista-sucursal.component';
+import { NuevoSucursalComponent } from './sucursal/nuevo-sucursal.component';
+import { EditarSucursalComponent } from './sucursal/editar-sucursal.component';
+import { SucursalService } from './service/sucursal.service';
 
 @NgModule({
   declarations: [
@@ -63,6 +67,9 @@ import { DatePipe } from '@angular/common';
     ListaVueloComponent,
     NuevoVueloComponent,
     EditarVueloComponent,
+    ListaSucursalComponent,
+    NuevoSucursalComponent,
+    EditarSucursalComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,6 +84,7 @@ import { DatePipe } from '@angular/common';
     LoginService,
     UsuarioService,
     VueloService,
+    SucursalService,
     DatePipe
   ],
   bootstrap: [AppComponent]

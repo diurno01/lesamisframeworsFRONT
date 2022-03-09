@@ -22,52 +22,26 @@ export class NuevoVueloComponent implements OnInit {
     precioPrimeraClase: number= {} as number;
     precioClaseturista: number= {} as number;
 
-    vuelo: Vuelo = {} as Vuelo;
-    // currentDate = new Date();
-    // vueloForm: FormGroup = {} as FormGroup;     
-
+ 
 
 
   constructor(
      private vueloService: VueloService,
      private toastr: ToastrService,
      private router : Router,
-    //  public datePipe : DatePipe     
      ) { }
 
    
   
 
   ngOnInit() {
-    // this.vueloForm = new FormGroup({
-    //  numeroDeVuelo : new FormControl(),
-    //  fechaYHora : new FormControl(this.datePipe.transform(this.currentDate, 'yyyy-MM-dd')),
-    //  origen  : new FormControl(),
-    //  destino : new FormControl(),
-    //  plazasPrimeraClase : new FormControl(),
-    //  plazasClaseTurista : new FormControl(),
-    //  precioPrimeraClase : new FormControl(),
-    //  precioClaseTurista : new FormControl()
-
-    // })
+ 
   }
 
-  // onSubmit(){
-  //   this.vuelo.numeroDeVuelo = this.vueloForm.value.numeroDeVuelo;
-  //   this.vuelo.fechaYHora = this.vueloForm.value.fechaYHora;
-  //   this.vuelo.origen = this.vueloForm.value.origen;
-  //   this.vuelo.destino = this.vueloForm.value.destino;
-  //   this.vuelo.plazasPrimeraClase =  this.vueloForm.value.plazasPrimeraClase;
-  //   this.vuelo.plazasClaseTurista =  this.vueloForm.value.plazasClaseTurista;
-  //   this.vuelo.precioPrimeraClase = this.vueloForm.value.precioPrimeraClase;
-  //   this.vuelo.precioClaseturista = this.vueloForm.value.precioClaseTurista;
-  //   this.crear();
-
-  // }
 
   crear(){
-   const vuelo = new Vuelo(this.vuelo.numeroDeVuelo, this.vuelo.fechaYHora, this.vuelo.origen, this.vuelo.destino, this.vuelo.plazasPrimeraClase, this.vuelo.plazasClaseTurista, this.vuelo.precioPrimeraClase, this.vuelo.precioClaseturista)
-    this.vueloService.crear(this.vuelo).subscribe(
+   const vuelo = new Vuelo(this.numeroDeVuelo, this.fechaYHora, this.origen, this.destino, this.plazasPrimeraClase, this.plazasClaseTurista, this.precioPrimeraClase, this.precioClaseturista)
+    this.vueloService.crear(vuelo).subscribe(
       data =>{
         this.toastr.success('Vuelo creado','ok',{
           timeOut : 3000,
@@ -80,7 +54,7 @@ export class NuevoVueloComponent implements OnInit {
           timeOut : 3000,
           positionClass: 'toast-top-center'          
         });
-        this.router.navigate(['/vuelo'])     
+        this.router.navigate(['/vuelo/nuevo'])     
       }
     )
   }

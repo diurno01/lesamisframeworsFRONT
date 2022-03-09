@@ -60,7 +60,7 @@ export class ListaVueloComponent implements OnInit {
     //  return this.datePipe.transform(date, 'yyyy-MM-dd');
     // var ddMMyyyy = this.datePipe.transform(date,"dd-MM-yyyy");
  
-    return this.datePipe.transform(date,'MM/dd/yyyy, h:mm a')
+    return this.datePipe.transform(date,'dd/mm/yyyy, h:mm a')
     // return date.toISOString
     
 
