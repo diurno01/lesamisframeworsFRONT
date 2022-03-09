@@ -46,6 +46,13 @@ import { ListaSucursalComponent } from './sucursal/lista-sucursal.component';
 import { NuevoSucursalComponent } from './sucursal/nuevo-sucursal.component';
 import { EditarSucursalComponent } from './sucursal/editar-sucursal.component';
 import { SucursalService } from './service/sucursal.service';
+import { ReservaHotel } from './models/reserva-hotel';
+import { ReservaHotelService } from './service/reserva-hotel.service';
+import { ReservaVueloService } from './service/reserva-vuelo.service';
+import { ListaReservaVueloComponent } from './reserva-vuelo/lista-reserva-vuelo.component';
+import { NuevoReservaVueloComponent } from './reserva-vuelo/nuevo-reserva-vuelo.component';
+import { EditarReservaVueloComponent } from './reserva-vuelo/editar-reserva-vuelo.component';
+import { DetalleReservaVueloComponent } from './reserva-vuelo/detalle-reserva-vuelo.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +77,10 @@ import { SucursalService } from './service/sucursal.service';
     ListaSucursalComponent,
     NuevoSucursalComponent,
     EditarSucursalComponent,
+    ListaReservaVueloComponent,
+    NuevoReservaVueloComponent,
+    EditarReservaVueloComponent,
+    DetalleReservaVueloComponent,
   ],
   imports: [
     BrowserModule,
@@ -85,6 +96,8 @@ import { SucursalService } from './service/sucursal.service';
     UsuarioService,
     VueloService,
     SucursalService,
+    ReservaHotelService,
+    ReservaVueloService,
     DatePipe
   ],
   bootstrap: [AppComponent]
