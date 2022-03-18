@@ -13,7 +13,7 @@ export class ListaSucursalComponent implements OnInit {
   sucursales : Sucursal[]= [];
 
   constructor(
-    private sucursaService:  SucursalService,
+    private sucursalService:  SucursalService,
     private toastr: ToastrService
   ) { }
 
@@ -22,7 +22,7 @@ export class ListaSucursalComponent implements OnInit {
   }
 
   cargarSucursales(): void {
-    this.sucursaService.lista().subscribe(
+    this.sucursalService.lista().subscribe(
       data=>{
         this.sucursales = data;
       },
@@ -33,7 +33,7 @@ export class ListaSucursalComponent implements OnInit {
   }
   borrar(sucursal: Sucursal) {
 
-    this.sucursaService.delete(sucursal).subscribe(
+    this.sucursalService.delete(sucursal).subscribe(
       data => {
         this.toastr.success('Sucursal Eliminada', 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'

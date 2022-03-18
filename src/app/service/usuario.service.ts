@@ -16,7 +16,10 @@ export class UsuarioService {
   public lista(): Observable<Usuario[]> {
     return this.httpClient.get<Usuario[]>(this.usuarioURL + 'lista');
   }
-  
+
+  public listaClientes(): Observable<Usuario[]> {
+    return this.httpClient.get<Usuario[]>(this.usuarioURL + 'tipo/CLIENTE');
+  }
 //falta hacer el llamado desde la base de datos para las sucursales
 
 public crear(usuario: Usuario): Observable<any> {

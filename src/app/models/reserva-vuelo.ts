@@ -1,15 +1,19 @@
+import { Sucursal } from "./sucursal";
+import { Usuario } from "./usuario";
+import { Vuelo } from "./vuelo";
+
 export class ReservaVuelo {
     id?: number;
 
-    idUsuario: number;
-    idVuelo: number;
     clase: string;
-    idSucursal : number;
+    usuario: Usuario;
+    vuelo : Vuelo;    
+    sucursal : Sucursal;
 
-    constructor(idUsuario: number, idVuelo: number, clase: string, idSucursal : number){
-        this.idUsuario = idUsuario;
-        this.idVuelo = idVuelo;
+    constructor(clase: string, usuario: Usuario, vuelo: Vuelo, sucursal : Sucursal){
         this.clase = clase;
-        this.idSucursal = idSucursal;
+        this.usuario = usuario;
+        this.vuelo = vuelo;
+        this.sucursal = sucursal;
     }
 }
