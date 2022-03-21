@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ReservaVueloRequest } from '../models/requests/reserva-vuelo-request';
+import { VueloRequest } from '../models/requests/vuelo-request';
 import { Sucursal } from '../models/sucursal';
 import { Usuario } from '../models/usuario';
 import { Vuelo } from '../models/vuelo';
@@ -12,19 +13,24 @@ import { VueloService } from '../service/vuelo.service';
 
 @Component({
   selector: 'app-nuevo-reserva-vuelo',
-  templateUrl: './nuevo-reserva-vuelo.component.html',
-  styleUrls: ['./nuevo-reserva-vuelo.component.css']
+  templateUrl: './nuevo-reserva-vuelo.component.html'
 })
 export class NuevoReservaVueloComponent implements OnInit {
 
    usuarios: Usuario[]=[];
    sucursales: Sucursal[]=[];
-   vuelos: Vuelo[]=[];  
+   vuelos: VueloRequest[]=[];  
+   clases: string[]=["PRIMERA_CLASE","CLASE_TURISTA"];
 
-    clase: string = {} as string;
-    idUsuario: number = {} as number;
-    idVuelo: number  = {} as number;
-    idSucursal: number  = {} as number;
+  //  usuario: Usuario = {} as Usuario;
+  //  vuelo: Vuelo = {} as Vuelo;
+  //  surcusal: Sucursal = {} as Sucursal;
+
+   clase: string = {} as string;
+   idUsuario: number= {} as number;
+   idVuelo: number= {} as number;
+   idSucursal: number= {} as number;
+
 
 
   constructor(
@@ -41,6 +47,8 @@ export class NuevoReservaVueloComponent implements OnInit {
     this.cargarSucursales();
     this.cargarClientes();
   }
+
+  // clase: string, idUsuario: number, idVuelo: number,  idSucursal: number
 
   crear(): void {
     const reservaVuelo = new ReservaVueloRequest(this.clase,this.idUsuario,this.idVuelo,this.idSucursal)
@@ -79,6 +87,7 @@ export class NuevoReservaVueloComponent implements OnInit {
     this.sucursalService.lista().subscribe(
       data=>{
         this.sucursales = data;
+        console.log(this.sucursales)
       },
       err=>{
         console.log(err);

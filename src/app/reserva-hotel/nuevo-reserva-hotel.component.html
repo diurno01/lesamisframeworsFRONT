@@ -1,0 +1,60 @@
+<app-header></app-header>
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-4 mx-auto">
+            <h1 class="text-center">Registro de Reserva Hotel</h1>
+        <form (ngSubmit)="crear()" novalidate #f="ngForm">            
+            <div class="form-group">             
+                <label for="idUsuario">Cliente</label>
+                <p></p>                 
+                <select name="idUsuario" [(ngModel)]="idUsuario">
+                    <option [ngValue]="objeto.id" *ngFor="let objeto of usuarios">{{objeto.nombre+" "+objeto.apellido}}</option>
+                </select>                
+            </div> 
+            <div class="form-group">             
+                <label for="idHotel">Hotel</label>
+                <p></p>                 
+                <select name="idHotel" [(ngModel)]="idHotel">
+                    <option [ngValue]="objeto.id" *ngFor="let objeto of hoteles">{{objeto.nombre}}</option>
+                </select>                
+            </div> 
+            <div class="form-group">             
+                <label for="pension">Pension</label>
+                <p></p>        
+                <select type="text" class="form" id= "pension" name="pension" [(ngModel)]="pension" required>
+                    <option [value]="item" *ngFor="let item of pensiones">{{item}}</option>
+                </select>       
+            </div>            
+            <div class="form-group">             
+                <label for="idSucursal">Sucursal</label>
+                <p></p>                 
+                <select name="idSucursal" [(ngModel)]="idSucursal">
+                    <option [ngValue]="objeto.id" *ngFor="let objeto of sucursales">{{objeto.codigo}}</option>
+                </select>                
+            </div>  
+            <div class="form-group mt-3">     
+                <label for="fechaDeIngreso">Fecha Ingreso</label>
+                <input type="date"
+                 class="form-control"
+                 placeholder="dd-mm-yy"
+                 id= "fechaDeIngreso"
+                 name="fechaDeIngreso"
+                [(ngModel)]="fechaDeIngreso" required>
+            </div>  
+            <div class="form-group mt-3">     
+                <label for="fechaDeEgreso">Fecha Egreso</label>
+                <input type="date"
+                 class="form-control"
+                 placeholder="dd-mm-yy"
+                 id= "fechaDeEgreso"
+                 name="fechaDeEgreso"
+                [(ngModel)]="fechaDeEgreso" required>
+            </div> 
+            <div class="text-center mt-3">
+                <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Crear</button>
+            </div>           
+        </form>
+    </div>
+</div>
+

@@ -11,14 +11,19 @@ import { Login } from '../models/login';
 
 export class LoginService {
   rol: string= {} as string;
-  loginURL = 'http://localhost:8080/login/check';
+  loginURL = 'http://localhost:8080/login/';
 
   constructor(private httpClient: HttpClient) {
   }
 
-  public loginUser(login: Login): Observable<Usuario> {
-    console.log(login)
-    return this.httpClient.post<Usuario>(this.loginURL, login);
+  public loginUser(login: Login): Observable<Usuario> {    
+    return this.httpClient.post<Usuario>(this.loginURL+ `check`, login);
   }
+
+  //llamdo al usuario loggeado
+
+  public obtenerUsuario(): Observable<Usuario> {
+    return this.httpClient.get<Usuario>(this.loginURL + `usuario`);
+  }  
 
 }

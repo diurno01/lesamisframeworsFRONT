@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Hotel } from '../models/hotel';
+import { VueloRequest } from '../models/requests/vuelo-request';
 import { Vuelo } from '../models/vuelo';
 
 @Injectable({
@@ -14,8 +15,8 @@ export class VueloService {
   constructor(private httpClient: HttpClient) {
    }
 
-   public lista(): Observable<Vuelo[]> {
-    return this.httpClient.get<Vuelo[]>(this.vueloURL + 'lista');
+   public lista(): Observable<VueloRequest[]> {
+    return this.httpClient.get<VueloRequest[]>(this.vueloURL + 'lista');
   }
   
   public crear(vuelo: Vuelo): Observable<any> {

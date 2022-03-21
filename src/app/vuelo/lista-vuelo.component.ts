@@ -1,21 +1,24 @@
 import { DatePipe, formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { VueloRequest } from '../models/requests/vuelo-request';
 import { Vuelo } from '../models/vuelo';
+import { ReservaVueloService } from '../service/reserva-vuelo.service';
 import { VueloService } from '../service/vuelo.service';
 
 @Component({
   selector: 'app-lista-vuelo',
   templateUrl: './lista-vuelo.component.html',
-  styleUrls: ['./lista-vuelo.component.css'],
   providers: [DatePipe]
 })
 export class ListaVueloComponent implements OnInit {
-  vuelos: Vuelo[] = [];
+  vuelos: VueloRequest[] = [];
   // datePipe: DatePipe = {} as DatePipe;
   dateString: string = "";
+  reservasTuristas: number = 0;
 
   constructor(
+    private reservaVueloService: ReservaVueloService,
     private vueloService: VueloService, 
     private toastr: ToastrService,
     public datePipe: DatePipe
@@ -36,6 +39,22 @@ export class ListaVueloComponent implements OnInit {
       }
     );
   }
+  
+  vuelosTurista(id: number ): number {
+    this.reservaVueloService.reservasTuristas(id).subscribe(
+      data=>{
+        this.reservasTuristas = data;
+        console.log(this.vuelos)
+        
+      },
+      err=>{
+        console.log(err);
+        
+      }
+   );
+      return this.reservasTuristas;
+  }
+
   borrar(vuelo: Vuelo) {
 
     // alert('borrar el'+ id)
@@ -55,14 +74,8 @@ export class ListaVueloComponent implements OnInit {
   }
 
   parseDate(date: Date){
-    console.log(date)
-    // var datePipe = new DatePipe("en-US");
-    //  return this.datePipe.transform(date, 'yyyy-MM-dd');
-    // var ddMMyyyy = this.datePipe.transform(date,"dd-MM-yyyy");
- 
-    return this.datePipe.transform(date,'dd/mm/yyyy, h:mm a')
-    // return date.toISOString
-    
+
+    return this.datePipe.transform(date,'dd/mm/yyyy, h:mm a')    
 
   }
 

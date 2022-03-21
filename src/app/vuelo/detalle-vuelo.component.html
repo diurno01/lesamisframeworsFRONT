@@ -1,1 +1,26 @@
-<p>detalle-vuelo works!</p>
+<app-header></app-header>
+
+<div class="container">
+    <div class="row mt-5" *ngIf="vuelo">
+      <div class="col-md-4 mx-auto">
+          <div class="card" style="width: 18rem;">
+              <div class="card-header text-center">
+              <b>Detalle</b> 
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><b>ID: </b>{{vuelo.id}}</li>
+                <li class="list-group-item"><b>NUMERO DE VUELO: </b>{{vuelo.numeroDeVuelo}}</li>
+                <li class="list-group-item"><b>FECHA Y HORA: </b>{{vuelo.fechaYHora}}</li>
+                <li class="list-group-item"><b>ORIGEN: </b>{{vuelo.origen}}</li>
+                <li class="list-group-item"><b>DESTINO: </b>{{vuelo.destino}}</li>
+                <li class="list-group-item"><b>PLAZAS PRIMERA CLASE: </b>{{vuelo.plazasPrimeraClase}}</li>
+                <li class="list-group-item"><b>PLAZAS CLASE TURISTA: </b>{{vuelo.plazasClaseTurista}}</li>             
+              </ul>
+              <div class="card-footer">
+                  <button class="btn btn-outline-primary btn-block" (click)="volver()"><i class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+              </div>
+            </div>
+            
+      </div>
+  </div>
+  </div>

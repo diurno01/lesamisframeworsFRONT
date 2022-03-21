@@ -2,15 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { Hotel } from '../models/hotel';
 import { HotelService } from '../service/hotel.service';
 import { ToastrService } from 'ngx-toastr';
+import { HotelRequest } from '../models/requests/hotel-request';
 
 @Component({
   selector: 'app-lista-hotel',
-  templateUrl: './lista-hotel.component.html',
-  styleUrls: ['./lista-hotel.component.css']
+  templateUrl: './lista-hotel.component.html'
 })
 export class ListaHotelComponent implements OnInit {
 
-  hoteles: Hotel[] = [];
+  hoteles: HotelRequest[] = [];
 
   constructor(
     private hotelService: HotelService, 
@@ -32,8 +32,6 @@ export class ListaHotelComponent implements OnInit {
     );
   }
   borrar(hotel: Hotel) {
-
-    // alert('borrar el'+ id)
     this.hotelService.delete(hotel).subscribe(
       data => {
         this.toastr.success('Hotel Eliminado', 'OK', {

@@ -6,8 +6,7 @@ import { VueloService } from '../service/vuelo.service';
 
 @Component({
   selector: 'app-editar-vuelo',
-  templateUrl: './editar-vuelo.component.html',
-  styleUrls: ['./editar-vuelo.component.css']
+  templateUrl: './editar-vuelo.component.html'
 })
 export class EditarVueloComponent implements OnInit {
 

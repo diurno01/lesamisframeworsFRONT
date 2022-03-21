@@ -12,13 +12,15 @@ import { Vuelo } from '../models/vuelo';
 })
 export class ReservaVueloService {
 
-  reservaVueloURL = 'http://localhost:8080/reservasVuelo/';
+  reservaVueloURL = 'http://localhost:8080/reservasvuelo/';
 
   usuarioURL = 'http://localhost:8080/usuario/';
   
   sucursalURL = 'http://localhost:8080/sucursal/';
 
   vueloURL = 'http://localhost:8080/vuelo/';
+
+  loginURL = 'http://localhost:8080/login/';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -32,9 +34,14 @@ export class ReservaVueloService {
     return this.httpClient.post<any>(this.reservaVueloURL + 'crear', reservaVuelo);
   }
   //detalle atravez de idUsuario
-  public detalle(id: number): Observable<ReservaVuelo> {
-    return this.httpClient.get<ReservaVuelo>(this.reservaVueloURL + `detalle/${id}`);
+  public detalle(id: number | undefined): Observable<ReservaVuelo[]> {
+    return this.httpClient.get<ReservaVuelo[]>(this.reservaVueloURL + `detalle/${id}`);
   }
+  //<!--restar ReservaVuelo-findByIdAndClase.lenght-->
+  public reservasTuristas(id: number): Observable<number> {
+    return this.httpClient.get<number>(this.reservaVueloURL + `reservaturista/${id}`);
+  }
+
 
   public actualizar(id: number, reservaVuelo: ReservaVuelo): Observable<any> {
     return this.httpClient.put<any>(this.reservaVueloURL + `actualizar/${id}`, reservaVuelo);
@@ -48,10 +55,6 @@ export class ReservaVueloService {
 
   public listaUsuarios(): Observable<Usuario[]> {
     return this.httpClient.get<Usuario[]>(this.usuarioURL + 'lista');
-  }
-
-  public obtenerUsuario(id: number): Observable<Usuario> {
-    return this.httpClient.get<Usuario>(this.usuarioURL + `detalle/${id}`);
   }
   
   //llamado a sucursales

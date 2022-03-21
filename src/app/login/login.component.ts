@@ -5,11 +5,11 @@ import { LoginService } from '../service/login.service';
 import { ToastrService } from 'ngx-toastr';
 import {Router} from '@angular/router';
 import { Usuario } from '../models/usuario';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  templateUrl: './login.component.html'
 })
 export class LoginComponent implements OnInit {
 
@@ -20,7 +20,9 @@ export class LoginComponent implements OnInit {
   constructor(
     private loginservice : LoginService,
     private toastr: ToastrService,
-    private router : Router) { }
+    private router : Router,
+    private httpclien: HttpClient
+    ) { }
 
   ngOnInit(): void {
   }
@@ -34,17 +36,17 @@ export class LoginComponent implements OnInit {
           positionClass: 'toast-top-center'
         });
        this.usuario = data; 
-
+        
        if(this.usuario.tipo == "ADMIN"){
-        this.router.navigate(['/menu-admin',{ id: this.usuario.id }]) 
+        this.router.navigate(['/menu-admin']) 
        }   
 
        if(this.usuario.tipo == "VENDEDOR"){
-        this.router.navigate(['/menu-vendedor',{ id: this.usuario.id }])
+        this.router.navigate(['/menu-vendedor'])
        }
 
        if(this.usuario.tipo == "CLIENTE"){
-         this.router.navigate(['/menu-cliente',{ id: this.usuario.id }])
+         this.router.navigate(['/menu-cliente'])
        }
 
       },err=>{
@@ -56,16 +58,5 @@ export class LoginComponent implements OnInit {
       }
     )
   }
-
-  // cargarHoteles(): void {
-  //   this.hotelService.lista().subscribe(
-  //     data=>{
-  //       this.hoteles = data;
-  //     },
-  //     err=>{
-  //       console.log(err);
-  //     }
-  //   );
-  // }
 
 }

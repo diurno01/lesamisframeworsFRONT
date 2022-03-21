@@ -51,8 +51,10 @@ import { ReservaHotelService } from './service/reserva-hotel.service';
 import { ReservaVueloService } from './service/reserva-vuelo.service';
 import { ListaReservaVueloComponent } from './reserva-vuelo/lista-reserva-vuelo.component';
 import { NuevoReservaVueloComponent } from './reserva-vuelo/nuevo-reserva-vuelo.component';
-import { EditarReservaVueloComponent } from './reserva-vuelo/editar-reserva-vuelo.component';
-import { DetalleReservaVueloComponent } from './reserva-vuelo/detalle-reserva-vuelo.component';
+import { NuevoReservaHotelComponent } from './reserva-hotel/nuevo-reserva-hotel.component';
+import { ListaReservaHotelComponent } from './reserva-hotel/lista-reserva-hotel.component';
+
+
 
 @NgModule({
   declarations: [
@@ -79,8 +81,8 @@ import { DetalleReservaVueloComponent } from './reserva-vuelo/detalle-reserva-vu
     EditarSucursalComponent,
     ListaReservaVueloComponent,
     NuevoReservaVueloComponent,
-    EditarReservaVueloComponent,
-    DetalleReservaVueloComponent,
+    NuevoReservaHotelComponent,
+    ListaReservaHotelComponent,   
   ],
   imports: [
     BrowserModule,

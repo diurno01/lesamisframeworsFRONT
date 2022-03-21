@@ -8,8 +8,7 @@ import { VueloService } from '../service/vuelo.service';
 
 @Component({
   selector: 'app-nuevo-vuelo',
-  templateUrl: './nuevo-vuelo.component.html',
-  styleUrls: ['./nuevo-vuelo.component.css']
+  templateUrl: './nuevo-vuelo.component.html'
 })
 export class NuevoVueloComponent implements OnInit {
 
@@ -40,7 +39,7 @@ export class NuevoVueloComponent implements OnInit {
 
 
   crear(){
-   const vuelo = new Vuelo(this.numeroDeVuelo, this.fechaYHora, this.origen, this.destino, this.plazasPrimeraClase, this.plazasClaseTurista, this.precioPrimeraClase, this.precioClaseturista)
+   const vuelo = new Vuelo(this.numeroDeVuelo, this.fechaYHora, this.origen, this.destino, this.plazasPrimeraClase, this.plazasClaseTurista)
     this.vueloService.crear(vuelo).subscribe(
       data =>{
         this.toastr.success('Vuelo creado','ok',{

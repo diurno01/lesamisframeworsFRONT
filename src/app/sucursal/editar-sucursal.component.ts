@@ -6,8 +6,7 @@ import { SucursalService } from '../service/sucursal.service';
 
 @Component({
   selector: 'app-editar-sucursal',
-  templateUrl: './editar-sucursal.component.html',
-  styleUrls: ['./editar-sucursal.component.css']
+  templateUrl: './editar-sucursal.component.html'
 })
 export class EditarSucursalComponent implements OnInit {
 

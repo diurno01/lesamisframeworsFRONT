@@ -7,8 +7,7 @@ import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-editar-hotel',
-  templateUrl: './editar-hotel.component.html',
-  styleUrls: ['./editar-hotel.component.css']
+  templateUrl: './editar-hotel.component.html'
 })
 export class EditarHotelComponent implements OnInit {
 

@@ -6,8 +6,7 @@ import { SucursalService } from '../service/sucursal.service';
 
 @Component({
   selector: 'app-nuevo-sucursal',
-  templateUrl: './nuevo-sucursal.component.html',
-  styleUrls: ['./nuevo-sucursal.component.css']
+  templateUrl: './nuevo-sucursal.component.html'
 })
 export class NuevoSucursalComponent implements OnInit {
   codigo: string = '';

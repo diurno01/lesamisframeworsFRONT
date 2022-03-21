@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Les Amis - Reservas Hotel</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+       
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/reservahotel"><i class="far fa-list-alt"></i> Lista</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  routerLink="/reservahotel/nuevo"><i class="fas fa-plus-circle"></i> Nueva Reserva Hotel</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  (click)="volver()"><i class="fa-solid fa-backward"></i> Volver</a>
+        </li>
+        
+      </ul>
+    </div>
+  </nav>
+
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Usuario</th>   
+        <th scope="col">Hotel</th>   
+        <th scope="col">Pension</th>  
+        <th scope="col">Sucursal</th>
+        <th scope="col">FechaIngreso</th>
+        <th scope="col">FechaEgreso</th>
+        <th scope="col">Borrar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reservaHotel of reservasHotel">
+        <td>{{reservaHotel.id}}</td>
+        <td>{{reservaHotel.usuario.nombre + " " + reservaHotel.usuario.apellido}}</td>
+        <td>{{reservaHotel.hotel.nombre}}</td>
+        <td>{{reservaHotel.pension}}</td>
+        <td>{{reservaHotel.sucursal.codigo}}</td>
+        <td>{{reservaHotel.fechaDeIngreso | date : 'dd-MM-yyyy'}}</td>
+        <td>{{reservaHotel.fechaDeEgreso | date : 'dd-MM-yyyy'}}</td>     
+        <td><button class="btn btn-outline-danger" (click)="borrar(reservaHotel)"><i class="far fa-trash-alt"></i>Eliminar</button></td>
+      </tr>
+    </tbody>
+  </table>

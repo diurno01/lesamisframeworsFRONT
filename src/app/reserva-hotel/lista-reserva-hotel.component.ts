@@ -1,38 +1,39 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { ReservaVuelo } from '../models/reserva-vuelo';
-import { Sucursal } from '../models/sucursal';
+import { Hotel } from '../models/hotel';
+import { ReservaHotel } from '../models/reserva-hotel';
 import { Usuario } from '../models/usuario';
-import { Vuelo } from '../models/vuelo';
 import { LoginService } from '../service/login.service';
-import { ReservaVueloService } from '../service/reserva-vuelo.service';
+import { ReservaHotelService } from '../service/reserva-hotel.service';
 
 @Component({
-  selector: 'app-lista-reserva-vuelo',
-  templateUrl: './lista-reserva-vuelo.component.html'
+  selector: 'app-lista-reserva-hotel',
+  templateUrl: './lista-reserva-hotel.component.html',
+  // styleUrls: ['./lista-reserva-hotel.component.css']
 })
-export class ListaReservaVueloComponent implements OnInit {
+export class ListaReservaHotelComponent implements OnInit {
 
-  reservasVuelo: ReservaVuelo[]= [];
-  usuarioLogeado: Usuario= {} as Usuario;
-
+  reservasHotel: ReservaHotel[]=[];
+  usuarioLogeado: Usuario={} as Usuario;
 
   constructor(
-    private loginService: LoginService,
+    private loginService : LoginService,
     private router : Router,
-    private reservaVueloService: ReservaVueloService,
+    private reservaHotelService : ReservaHotelService,
     private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
-    this.cargarReservasVuelo();
+    this.cargarReservasHotel();
   }
 
-  cargarReservasVuelo(): void {
-    this.reservaVueloService.lista().subscribe(
+  cargarReservasHotel(): void {
+    this.reservaHotelService.lista().subscribe(
       data=>{
-        this.reservasVuelo = data;
+        this.reservasHotel = data;
+        console.log(this.reservasHotel);
       },
       err=>{
         console.log(err);
@@ -41,13 +42,13 @@ export class ListaReservaVueloComponent implements OnInit {
   }
 
  
-  borrar(reservaVuelo: ReservaVuelo) {
-    this.reservaVueloService.delete(reservaVuelo).subscribe(
+  borrar(reservaHotel: ReservaHotel) {
+    this.reservaHotelService.delete(reservaHotel).subscribe(
       data => {
         this.toastr.success('Reserva Vuelo Eliminada', 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'
         });
-        this.cargarReservasVuelo();
+        this.cargarReservasHotel();
       },
       err => {
         this.toastr.error(err.error.mensaje, 'Fail', {
@@ -70,11 +71,7 @@ export class ListaReservaVueloComponent implements OnInit {
         this.router.navigate(['/menu-admin']) 
        }else{
         this.router.navigate(['/menu-vendedor'])
-       }
-
-      //  if(this.usuarioLogeado.tipo == "VENDEDOR"){
-      //   this.router.navigate(['/menu-vendedor'])
-      //  }     
+       }    
       },err=>{
         this.toastr.error(err.error.mensaje,'Fail',{
           timeOut : 3000,

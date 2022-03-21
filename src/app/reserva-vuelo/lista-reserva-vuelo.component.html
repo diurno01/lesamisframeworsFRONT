@@ -13,7 +13,7 @@
           <a class="nav-link"  routerLink="/reservavuelo/nuevo"><i class="fas fa-plus-circle"></i> Nueva Reserva Vuelo</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"  routerLink="/menu-admin"><i class="fa-solid fa-backward"></i> Volver</a>
+          <a class="nav-link"  (click)="volver()"><i class="fa-solid fa-backward"></i> Volver</a>
         </li>
         
       </ul>
@@ -29,7 +29,7 @@
           <th scope="col">NumVuelo</th>   
           <th scope="col">Clase</th>   
           <th scope="col">CodSucursal</th>  
-          <th scope="col">Ver</th>
+          <!-- <th scope="col">Ver</th> -->
           <!-- <th scope="col">Editar</th> -->
           <th scope="col">Borrar</th>
   
@@ -42,7 +42,7 @@
           <td>{{reservavuelo.vuelo.numeroDeVuelo}}</td>
           <td>{{reservavuelo.clase}}</td>
           <td>{{reservavuelo.sucursal.codigo}}</td>   
-          <td><button class="btn btn-outline-primary" routerLink="/reservavuelo/detalle/{{reservavuelo.id}}"><i class="far fa-eye"></i>Ver</button></td>
+          <!-- <td><button class="btn btn-outline-primary" routerLink="/reservavuelo/detalle/{{reservavuelo.id}}"><i class="far fa-eye"></i>Ver</button></td> -->
           <!-- <td><button class="btn btn-outline-warning" routerLink="/hotel/editar/{{reservavuelo.id}}"><i class="far fa-edit"></i>Editar</button></td>         -->
           <td><button class="btn btn-outline-danger" (click)="borrar(reservavuelo)"><i class="far fa-trash-alt"></i>Eliminar</button></td>
         </tr>

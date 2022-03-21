@@ -6,8 +6,7 @@ import { HotelService } from '../service/hotel.service';
 
 @Component({
   selector: 'app-detalle-hotel',
-  templateUrl: './detalle-hotel.component.html',
-  styleUrls: ['./detalle-hotel.component.css']
+  templateUrl: './detalle-hotel.component.html'
 })
 export class DetalleHotelComponent implements OnInit {
 

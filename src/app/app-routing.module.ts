@@ -28,8 +28,11 @@ import { EditarSucursalComponent } from './sucursal/editar-sucursal.component';
 //reserva vuelo routes
 import { ListaReservaVueloComponent } from './reserva-vuelo/lista-reserva-vuelo.component';
 import { NuevoReservaVueloComponent } from './reserva-vuelo/nuevo-reserva-vuelo.component';
-import { EditarReservaVueloComponent } from './reserva-vuelo/editar-reserva-vuelo.component';
-import { DetalleReservaVueloComponent } from './reserva-vuelo/detalle-reserva-vuelo.component';
+//reserva hotel routes
+import { ListaReservaHotelComponent } from './reserva-hotel/lista-reserva-hotel.component';
+import { NuevoReservaHotelComponent } from './reserva-hotel/nuevo-reserva-hotel.component';
+
+
 
 
 const routes: Routes = [
@@ -53,9 +56,9 @@ const routes: Routes = [
   {path: 'sucursal/nuevo',component: NuevoSucursalComponent},
   {path: 'sucursal/editar/:id', component: EditarSucursalComponent},
   {path: 'reservavuelo', component: ListaReservaVueloComponent},
-  {path: 'reservavuelo/detalle/:id', component:DetalleReservaVueloComponent},
-  {path: 'reservavuelo/nuevo',component:NuevoReservaVueloComponent},
-  {path: 'reservavuelo/editar/:id', component:EditarReservaVueloComponent},
+  {path: 'reservavuelo/nuevo',component: NuevoReservaVueloComponent},
+  {path: 'reservahotel', component: ListaReservaHotelComponent},
+  {path: 'reservahotel/nuevo',component: NuevoReservaHotelComponent},
 
   {path: '**', redirectTo: '', pathMatch: 'full'}
 ];

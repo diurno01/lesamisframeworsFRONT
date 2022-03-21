@@ -6,8 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-nuevo-hotel',
-  templateUrl: './nuevo-hotel.component.html',
-  styleUrls: ['./nuevo-hotel.component.css']
+  templateUrl: './nuevo-hotel.component.html'
 })
 export class NuevoHotelComponent implements OnInit {
 

@@ -38,17 +38,7 @@
                 <label for="plazasClaseTurista">Plazas Clase Turista</label>
                 <input type="number" class="form-control" id= "plazasClaseTurista" name="plazasClaseTurista"
                 [(ngModel)]="vuelo.plazasClaseTurista" required>            
-            </div>
-            <div class="form-group">               
-                <label for="precioPrimeraClase">Precio Primera Clase</label>
-                <input type="number" class="form-control" id= "precioPrimeraClase" name="precioPrimeraClase"
-                [(ngModel)]="vuelo.precioPrimeraClase" required>            
-            </div>
-            <div class="form-group">               
-                <label for="precioClaseturista">Precio Clase Turista</label>
-                <input type="number" class="form-control" id= "precioClaseturista" name="precioClaseturista"
-                [(ngModel)]="vuelo.precioClaseturista" required>            
-            </div>
+            </div>            
             <div class="text-center mt-3">
                 <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Editar</button>
             </div>            

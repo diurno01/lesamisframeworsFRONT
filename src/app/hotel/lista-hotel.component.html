@@ -29,9 +29,7 @@
         <th scope="col">Direccion</th>   
         <th scope="col">Ciudad</th>   
         <th scope="col">Telefono</th>   
-        <th scope="col">NumPlazas</th>   
-        <th scope="col">PrecioPenCom</th>   
-        <th scope="col">PrecioMedPen</th>   
+        <th scope="col">NumPlazasDisponibles</th>   
         <th scope="col">Ver</th>
         <th scope="col">Editar</th>
         <!-- <th scope="col">Borrar</th> -->
@@ -45,9 +43,7 @@
         <td>{{hotel.direccion}}</td>
         <td>{{hotel.ciudad}}</td>
         <td>{{hotel.telefono}}</td>
-        <td>{{hotel.numeroDePlazas}}</td>
-        <td>{{hotel.precioPensionCompleta}}</td>
-        <td>{{hotel.precioMediaPension}}</td>      
+        <td>{{hotel.numeroDePlazasDisponibles}}</td>    
         <td><button class="btn btn-outline-primary" routerLink="/hotel/detalle/{{hotel.id}}"><i class="far fa-eye"></i>Ver</button></td>
         <td><button class="btn btn-outline-warning" routerLink="/hotel/editar/{{hotel.id}}"><i class="far fa-edit"></i>Editar</button></td>        
         <!-- <td><button class="btn btn-outline-danger" (click)="borrar(hotel)"><i class="far fa-trash-alt"></i>Eliminar</button></td> -->

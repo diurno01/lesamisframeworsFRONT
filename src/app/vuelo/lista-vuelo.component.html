@@ -28,11 +28,9 @@
         <th scope="col">Fecha y Hora</th>     
         <th scope="col">Origen</th>   
         <th scope="col">Destino</th>   
-        <th scope="col">PlazasPrimera</th>   
-        <th scope="col">PlazasTurista</th>   
-        <th scope="col">PrecioPrimera</th>   
-        <th scope="col">PrecioTurista</th>   
-        <!-- <th scope="col">Ver</th> -->
+        <th scope="col">PlazasTotales</th>   
+        <th scope="col">PlazasTuristaDisponible</th>
+        <th scope="col">Ver</th>
         <th scope="col">Editar</th>
         <!-- <th scope="col">Borrar</th> -->
       </tr>
@@ -45,11 +43,9 @@
         <!-- | date: 'medium' -->
         <td>{{vuelo.origen}}</td>
         <td>{{vuelo.destino}}</td>
-        <td>{{vuelo.plazasPrimeraClase}}</td>
-        <td>{{vuelo.plazasClaseTurista}}</td>
-        <td>{{vuelo.precioPrimeraClase}}</td>    
-        <td>{{vuelo.precioClaseturista}}</td>   
-        <!-- <td><button class="btn btn-outline-primary" routerLink="/vuelo/detalle/{{vuelo.id}}"><i class="far fa-eye"></i>Ver</button></td> -->
+        <td>{{vuelo.plazasTotales}}</td>
+        <td>{{vuelo.plazasClaseTuristaDisponible}}</td>
+        <td><button class="btn btn-outline-primary" routerLink="/vuelo/detalle/{{vuelo.id}}"><i class="far fa-eye"></i>Ver</button></td>
         <td><button class="btn btn-outline-warning" routerLink="/vuelo/editar/{{vuelo.id}}"><i class="far fa-edit"></i>Editar</button></td>        
         <!-- <td><button class="btn btn-outline-danger" (click)="borrar(vuelo)"><i class="far fa-trash-alt"></i>Eliminar</button></td> -->
       </tr>

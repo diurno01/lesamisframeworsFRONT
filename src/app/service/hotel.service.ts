@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Hotel} from '../models/hotel';
+import { HotelRequest } from '../models/requests/hotel-request';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +16,8 @@ export class HotelService {
   constructor(private httpClient: HttpClient) {
    }
 
-   public lista(): Observable<Hotel[]> {
-    return this.httpClient.get<Hotel[]>(this.hotelURL + 'lista');
+   public lista(): Observable<HotelRequest[]> {
+    return this.httpClient.get<HotelRequest[]>(this.hotelURL + 'lista');
   }
   
   public crear(hotel: Hotel): Observable<any> {
